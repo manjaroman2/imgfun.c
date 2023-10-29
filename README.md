@@ -2,4 +2,4 @@
 
 Just playing around with image manipulation and interpolation in C. 
 
-Using the excellent (libspng)[https://libspng.org/]
+Using the excellent [libspng](https://libspng.org/)
