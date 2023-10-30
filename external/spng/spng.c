@@ -2,8 +2,7 @@
 
 #define SPNG__BUILD
 
-#include "include/spng.h"
-// #include <spng.h>
+#include <spng.h>
 
 #include <limits.h>
 #include <string.h>

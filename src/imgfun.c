@@ -1,11 +1,6 @@
-#include <stdio.h>
-#include <errno.h>
-#include <spng.h>
-#include <imgfun.h>
+#include <imgfun.h> 
 
-#define IMGFUN_INTERPOLATE_MAX 10
-
-const char *color_type_str(enum spng_color_type color_type)
+const char *imgfun_color_type_str(enum spng_color_type color_type)
 {
     switch (color_type)
     {
@@ -24,7 +19,7 @@ const char *color_type_str(enum spng_color_type color_type)
     }
 }
 
-int open_pngs(const char *files[], size_t n)
+int imgfun_open_pngs(const char *files[], size_t n)
 {
     if (n > IMGFUN_INTERPOLATE_MAX)
     {
@@ -89,7 +84,7 @@ int open_pngs(const char *files[], size_t n)
             goto deallocCtx;
         }
 
-        const char *color_name = color_type_str(ihdr.color_type);
+        const char *color_name = imgfun_color_type_str(ihdr.color_type);
 
         printf("width: %u\n"
                "height: %u\n"
@@ -166,5 +161,5 @@ int main(int argc, const char *argv[])
         printf("ERROR: Needs 2 input files.\n");
         exit(1);
     }
-    return open_pngs(argv + 1, argc - 1);
+    return imgfun_open_pngs(argv + 1, argc - 1);
 }
